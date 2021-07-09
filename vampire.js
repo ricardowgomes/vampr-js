@@ -34,8 +34,11 @@ class Vampire {
 
   // Returns true if this vampire is more senior than the other vampire. (Who is closer to the original vampire)
   isMoreSeniorThan(vampire) {
-    if (this.numberOfVampiresFromOriginal > vampire.numberOfVampiresFromOriginal) {
+    if (this.numberOfVampiresFromOriginal < vampire.numberOfVampiresFromOriginal) {
       return true;
+
+    } else {
+      return false;
     }
   }
 
@@ -47,7 +50,19 @@ class Vampire {
   // * when comparing Ansel and Sarah, Ansel is the closest common anscestor.
   // * when comparing Ansel and Andrew, Ansel is the closest common anscestor.
   closestCommonAncestor(vampire) {
+    // if (this.creator === vampire.creator) {
+    //   return this.creator;
 
+    // }
+    if (this.numberOfVampiresFromOriginal > vampire.numberOfVampiresFromOriginal) {
+      return this.creator;
+
+    } else if (this.numberOfVampiresFromOriginal < vampire.numberOfVampiresFromOriginal) {
+      return vampire.creator;
+    }
+    // else {
+
+    // }
   }
 }
 
